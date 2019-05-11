@@ -1,0 +1,11 @@
+<h2>Classement</h2>
+
+<ul class="teams">
+  <li *ngFor="let team of teams" (click)="onSelect(team)"
+    [class.selected]="team === selectedTeam"
+    (click)="onSelect(team)">
+    <span class="badge">{{team.id}}</span> {{team.name}}
+  </li>
+</ul>
+
+<app-team-detai [team]="selectedTeam"></app-team-detai>
