@@ -9,6 +9,10 @@ import { TeamDetaiComponent } from './team-detai/team-detai.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbListModule } from '@nebular/theme';
+
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,16 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    LeafletModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbCardModule,
+    NbListModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

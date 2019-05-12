@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { TEAMS } from '../ma_liste_de_teams';
 import { Team, TeamService } from '../team.service';
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
+  styleUrls: ['./../../assets/css/main.css',
+              './new.component.css',
+
+  ]
 })
 export class NewComponent implements OnInit {
 
@@ -13,11 +17,20 @@ export class NewComponent implements OnInit {
 
   selectedTeam : Team;
 
-
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
     this.getTeams();
+
+    // Déclaration de la carte avec les coordonnées du centre et le niveau de zoom.
+    const mymap = L.map('mapfrance').setView([45.750000, 4.850000], 13);
+   
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'France Map'
+    }).addTo(mymap);
+
+
+
   }
 
   onSelect(team: Team): void{
