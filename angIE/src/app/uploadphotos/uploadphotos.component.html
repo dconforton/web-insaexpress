@@ -56,18 +56,43 @@
 						<article class="post">
 							<header>
 								<div class="title">
-									<h2><a href="single.html">Suis les participants</a></h2>
+									<h2><a href="single.html">Relève des défis</a></h2>
 								</div>
 								<div class="meta">
 									<time class="published" datetime="2015-11-01">November 1, 2015</time>
 								</div>
 							</header>
-							<!-- Déclaration du conteneur de la carte avec l'id "frugalmap" -->
-							<div id="mapfrance"></div>
-							
-							 
-							
-							<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+
+							<section>
+								<h3>Selectionne un défi</h3>
+								<form method="post" action="#">
+									<div class="row gtr-uniform">
+										<div class="col-12">
+											<select name="demo-category" id="demo-category">
+												<option value="">- Afficher les défis -</option>
+												<option value="1">Photo insolite</option>
+												<option value="1">Se faire prendre par une famille</option>
+												<option value="1">Se faire offrir le goûter</option>
+												<option value="1">Se faire prendre par un tank</option>
+												<option value="1">Panneau des villes</option>
+												<option value="1">Arrivée sans aides dans les délais</option>
+											</select>
+										</div>
+									
+										
+									</div>
+								</form>
+								<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+							    <input type="file" name="profile" (change)="onChange($event)" />
+							    <br/>
+							    <br/>
+							    <div class="col-12">
+							    	<button type="submit">Valider</button>
+								</div>
+
+							  </form>
+							</section>
 							
 						</article>
 
@@ -111,7 +136,7 @@
 										
 										<nb-layout>
 										</nb-layout>
-									    <nb-card>
+<!--									    <nb-card>
 									      <nb-card-header><h2>Classement</h2></nb-card-header>
 									      <nb-card-body>
 									      	<div class = "leaderboard">
@@ -120,7 +145,8 @@
 									      				<div ><img [src]="team.picture" class="team-picture"></div>
 									      				<div>
 											              {{team.name}}<br><span>a déjà parcouru {{team.distance/1000}}km</span> </div>
-											            <div>{{team.longitude}}pts</div>
+											            <div>{{team.score}}pts</div>
+														 
 
 
 													</nb-list-item>
@@ -133,9 +159,9 @@
 									         </div>
 									      </nb-card-body>
 									    </nb-card>
-
 									   
 										<app-team-detai [team]="selectedTeam"></app-team-detai>
+-->
 									</article>
 
 							</div>
@@ -162,5 +188,8 @@
 	
 
 </body>
+
+
+
 
 
