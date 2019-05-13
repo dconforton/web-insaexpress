@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TEAMS } from '../ma_liste_de_teams';
 import { Team, TeamService } from '../team.service';
 import * as L from 'leaflet';
@@ -7,9 +7,8 @@ import * as L from 'leaflet';
   selector: 'app-new',
   templateUrl: './new.component.html',
   styleUrls: ['./../../assets/css/main.css',
-              './new.component.css',
-
-  ]
+              './new.component.css', ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NewComponent implements OnInit {
 

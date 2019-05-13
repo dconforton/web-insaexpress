@@ -1,3 +1,4 @@
+
 <body class="is-preload">
 
 	<!-- Wrapper -->
@@ -62,9 +63,10 @@
 								</div>
 							</header>
 							<!-- Déclaration du conteneur de la carte avec l'id "frugalmap" -->
-							<div id="mapfrance">
+							<div id="mapfrance"></div>
+							
 							 
-							</div>
+							
 							<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 							
 						</article>
@@ -94,7 +96,7 @@
 						<section id="intro">
 							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
 							<header>
-								<h2>Classement</h2>
+								
 							</header>
 						</section>
 
@@ -106,59 +108,34 @@
 
 								<!-- Mini Post -->
 									<article class="mini-post">
-										<header>
-											<h3>Classement</h3>
-											<a href="#" class="author"><img src="/assets/images/avatar.jpg" alt="" /></a>
-										</header>
-										<a href="/assets/single.html" class="image"><img src="/assets/images/pic04.jpg" alt="" /></a>
-
-
+										
 										<nb-layout>
-										
-										        <nb-list>
-										          <nb-list-item *ngFor="let team of teams">
-										            {{ team.name }} a parcouru ...
-										          </nb-list-item>
-										        </nb-list>
-
-
-
 										</nb-layout>
-
-									   
-									  
-										
-									<!--
-										<nb-card>
-										
-											<nb-card-header><h2>Classement</h2></nb-card-header>
-									      	<nb-card-body>
-												<ul class="teams">
-												  <li *ngFor="let team of teams" (click)="onSelect(team)"
-												    [class.selected]="team === selectedTeam"
-												    (click)="onSelect(team)">
-												    <span class="badge">{{team.id}}</span> {{team.name}}
-												  </li>
-												</ul>
-											</nb-card-body>
-										
-										</nb-card>
-									
-									
-									   <nb-card>
+									    <nb-card>
 									      <nb-card-header><h2>Classement</h2></nb-card-header>
 									      <nb-card-body>
-									          <div class="row team" *ngFor="let team of teams; index as i" [routerLink]="['teams', team.id]">
-									            <div class="col-2"><img [src]="team.picture" class="team-picture"></div>
+									      	<div class = "leaderboard">
+									      		<nb-list>
+									      			<nb-list-item *ngFor="let team of teams">
+									      				<div ><img [src]="team.picture" class="team-picture"></div>
+									      				<div>
+											              {{team.name}}<br><span>a déjà parcouru {{team.distance/1000}}km</span> </div>
+											            <div>{{team.score}}pts</div>
+														 
 
-									            <div>
-									              {{team.name}}<br><span class="text-muted">a déjà parcouru {{team.distance/1000}}km</span> </div>
-									            <div class="col-2 col-md-3 text-center">{{team.score}}pts</div>
+
+													</nb-list-item>
+									      		</nb-list>
+									          <div class="row team" *ngFor="let team of teams" (click)="onSelect(team)"
+												    [class.selected]="team === selectedTeam"
+												    (click)="onSelect(team)" >
 									            
 									          </div>
+									         </div>
 									      </nb-card-body>
 									    </nb-card>
-									-->
+
+									   
 										<app-team-detai [team]="selectedTeam"></app-team-detai>
 									</article>
 
@@ -186,4 +163,5 @@
 	
 
 </body>
+
 
